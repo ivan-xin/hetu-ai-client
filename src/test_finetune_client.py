@@ -98,6 +98,35 @@ def main():
         # print(f"更新后的微调: {json.dumps(updated_finetune, indent=2, ensure_ascii=False)}")
     except Exception as e:
         print(f"微调操作失败: {str(e)}")
+
+        # 测试下载数据集
+    print("\n测试下载数据集 JSONL...")
+    try:
+        dataset_id = "768030305703"
+        split_name = "train"
+        format_type = "openai_chat_jsonl"
+        data_strategy = "final_only"
+        custom_system_message = "your are a ai teacher"
+        custom_thinking_instructions = "Think step by step, explaining your reasoning."
+        jsonl_content = client.download_dataset_jsonl(
+            project_id,
+            task_id,
+            dataset_id,
+            split_name,
+            format_type,
+            data_strategy,
+            custom_system_message,
+            custom_thinking_instructions
+        )
+        
+        # 保存到文件
+        output_file = "test_dataset.jsonl"
+        with open(output_file, "wb") as f:
+            f.write(jsonl_content)
+        
+        print(f"数据集已下载到 {output_file}")
+    except Exception as e:
+        print(f"下载数据集失败: {str(e)}")
         
 
 def main_0():

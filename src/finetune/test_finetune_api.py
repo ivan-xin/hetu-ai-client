@@ -220,7 +220,7 @@ class HetuAIFinetuneClient:
         Returns:
             JSONL 文件内容
         """
-        url = f"{self.base_url}/api/download_dataset_jsonl"
+        url = f"{self.base_url}/api/finetune/download_dataset_jsonl"
         params = {
             "project_id": project_id,
             "task_id": task_id,
