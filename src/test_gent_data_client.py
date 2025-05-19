@@ -98,36 +98,36 @@ def main():
 
 
     # 测试从文件导入样本
-    print("\n测试从文件导入样本...")
-    try:
-        # 使用已存在的CSV文件
-        temp_file = os.path.abspath("dataset/temp_samples.csv")
+    # print("\n测试从文件导入样本...")
+    # try:
+    #     # 使用已存在的CSV文件
+    #     temp_file = os.path.abspath("dataset/temp_samples.csv")
         
-        # 确保文件存在
-        if not os.path.exists(temp_file):
-            print(f"错误: 文件 {temp_file} 不存在")
-            # 可以选择在这里创建文件或退出
+    #     # 确保文件存在
+    #     if not os.path.exists(temp_file):
+    #         print(f"错误: 文件 {temp_file} 不存在")
+    #         # 可以选择在这里创建文件或退出
         
-        # 导入文件
-        request_data = {
-            "prompt_method": "simple_prompt_builder",
-            "input_model_name": "Qwen/Qwen2.5-72B-Instruct-Turbo",
-            "output_model_name": "Qwen/Qwen2.5-72B-Instruct-Turbo",
-            "output_provider": "together_ai",
-            "input_provider": "together_ai",
-        }
+    #     # 导入文件
+    #     request_data = {
+    #         "prompt_method": "simple_prompt_builder",
+    #         "input_model_name": "Qwen/Qwen2.5-72B-Instruct-Turbo",
+    #         "output_model_name": "Qwen/Qwen2.5-72B-Instruct-Turbo",
+    #         "output_provider": "together_ai",
+    #         "input_provider": "together_ai",
+    #     }
         
-        import_result = client.import_samples_from_file(
-            project_id, 
-            task_id, 
-            temp_file,
-            request_data
-        )
-        print(f"文件导入结果: {json.dumps(import_result, indent=2, ensure_ascii=False)}")
+    #     import_result = client.import_samples_from_file(
+    #         project_id, 
+    #         task_id, 
+    #         temp_file,
+    #         request_data
+    #     )
+    #     print(f"文件导入结果: {json.dumps(import_result, indent=2, ensure_ascii=False)}")
         
-        # 不要删除文件，因为它是预先存在的资源
-    except Exception as e:
-        print(f"从文件导入样本失败: {str(e)}")
+    #     # 不要删除文件，因为它是预先存在的资源
+    # except Exception as e:
+    #     print(f"从文件导入样本失败: {str(e)}")
     
     print("\n所有测试完成!")
 

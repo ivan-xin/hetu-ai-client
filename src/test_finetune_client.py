@@ -20,7 +20,7 @@ def main():
             provider_id = providers[2]["id"]
             
             # 测试获取超参数
-            print(f"\n测试获取提供商 {provider_id} 的超参数...")
+            print(f"\n测试获取提供商 {provider_id} 的超参数...") #together_ai !!!!!
             hyperparameters = client.get_finetune_hyperparameters(provider_id)
             print(f"超参数: {json.dumps(hyperparameters, indent=2, ensure_ascii=False)}")
     except Exception as e:
@@ -53,7 +53,7 @@ def main():
         print(f"创建数据集分割失败: {str(e)}")
         dataset_split_id = "default_split_id"  # 使用默认值继续测试
     
-        # 测试获取微调列表
+    # 测试获取微调列表
     print("\n测试获取微调列表...")
     try:
         finetunes = client.get_finetunes(project_id, task_id)

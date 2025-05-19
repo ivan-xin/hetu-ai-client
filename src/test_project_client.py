@@ -42,12 +42,12 @@ def main():
     
 
     # 测试导入项目
-    print("\n测试导入项目...")
-    try:
-        imported_project = client.import_project("/path/to/existing/project")
-        print(f"导入的项目: {json.dumps(imported_project, indent=2, ensure_ascii=False)}")
-    except Exception as e:
-        print(f"导入项目失败: {str(e)}")
+    # print("\n测试导入项目...")
+    # try:
+    #     imported_project = client.import_project("/path/to/existing/project")
+    #     print(f"导入的项目: {json.dumps(imported_project, indent=2, ensure_ascii=False)}")
+    # except Exception as e:
+    #     print(f"导入项目失败: {str(e)}")
     
 
 

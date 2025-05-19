@@ -34,10 +34,10 @@ def main():
         print(f"任务详情: {json.dumps(task, indent=2, ensure_ascii=False)}")
         
         # # 测试更新任务
-        print(f"\n测试更新任务 {task_id}...")
-        task_updates =  {"name": "Updated Task"}
-        updated_task = client.update_task(project_id, task_id, task_updates)
-        print(f"更新后的任务: {json.dumps(updated_task, indent=2, ensure_ascii=False)}")
+        # print(f"\n测试更新任务 {task_id}...")
+        # task_updates =  {"name": "Updated Task"}
+        # updated_task = client.update_task(project_id, task_id, task_updates)
+        # print(f"更新后的任务: {json.dumps(updated_task, indent=2, ensure_ascii=False)}")
         
         # 测试删除任务
         print(f"\n测试删除任务 {task_id}...")
